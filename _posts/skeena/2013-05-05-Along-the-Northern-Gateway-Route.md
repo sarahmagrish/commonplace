@@ -13,7 +13,7 @@ map-icon: map_image_wht.png
 slideshow:
 - img: 1106_NEO_Pipeline_101.jpg
 
-  caption: Wetland south of Davie Lake. According to GPS coorindates, the proposed Enbridge pipelines would be built one-third of a mile from this location.
+  caption: Wetland south of Davie Lake. According to GPS coordinates, the proposed Enbridge pipelines would be built one-third of a mile from this location.
 - img: 1106_NEO_Pipeline_120.jpg
 
   caption: Grizzly bear north of Frost Road and west of Stuart Lake Highway. According to GPS coorindates, the proposed Enbridge pipelines would be built less than half a mile from this location.
