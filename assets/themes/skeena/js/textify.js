@@ -332,7 +332,7 @@
                     while ($column.height() <= columnHeight) {
 
                         box.append(allChars[y] + ' ')
-                        $prefinish = $text.html()
+                        $prefinish = $text.html();
                         if (allChars[y]) {
                             if ((allChars[y].indexOf('[') > -1) || (allChars[y].indexOf(']') > -1) || (allChars[y].indexOf('(') > -1) || (allChars[y].indexOf(')') > -1) || (allChars[y].indexOf('?') > -1) || (allChars[y].indexOf('.') > -1)) {
                                 thisChar = allChars[y].replace(/[[]/g, '[[]')
@@ -355,9 +355,10 @@
                             $text.html(news)
                             y++
                         } else {
+                            alert('should break');
                             break;
                         }              
-                            
+                        alert('broken');
                     }
                     $text.html($prefinish)
 
