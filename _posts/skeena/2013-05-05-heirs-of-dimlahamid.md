@@ -12,18 +12,16 @@ longitude: -129.35
 slideshow:
 - img: gary01.jpg
   caption: Hartley Bay is home to the Gitga’at, who originally lived in the village of Laxgal’tsap near the Quaal River.
-- img: gary02.jpg
-  caption: The Enbridge Pipeline proposal includes more than 200 oil tankers coming out of nearby Douglas Channel every year.
-- img: gary03.jpg
+- img: gary14.jpg
   caption: After English missionary William Duncan set off to establish New Metlakatla in Alaska, the remaining Gitga’at chose the cove at Hartley Bay as their new home.
+- img: gary03.jpg
+  caption: The Gitga’at are known as the People of the Cane, which refers to the “canes” or poles by which people once navigated canoes in the lower Skeena.
 - img: gary04.jpg
   caption: Development proposals across the Skeena have brought everyone into a conversation about the value of the land, including homesteaders like Ken Rabnett.
 - img: gary05.jpg
   caption: The Great Bear Rainforest takes its name from the white grizzly or “spirit” bear, which the Tsimshian people said had the power to transform into a man.
 - img: gary07.jpg
   caption: Elder Helen Clifton married Gitga’at hereditary chief John Clifton in 1942 and moved to Hartley Bay where they raised six children, who gave them twenty grandchildren.
-- img: gary08.jpg
-  caption: The Gitga’at are known as the People of the Cane, which refers to the “canes” or poles by which people once navigated canoes in the lower Skeena.
 - img: gary09.jpg
   caption: Jason Loring prepares a net for fishing in the upper Skeena. More than anything else, the salmon connect everyone within the watershed.
 - img: gary10.jpg
@@ -34,7 +32,7 @@ slideshow:
   caption: As the heirs of Dimlahamid describe the landscape, they talk with a mix of reverence, pride and melancholy.
 - img: gary13.jpg
   caption: “Everything we have comes from the sea,” says Gitga’at elder Helen Clifton.
-- img: gary14.jpg
+- img: gary02.jpg
   caption: About 200 people currently live at Hartley Bay. Many use small skiffs and fishing boats to set crab traps or catch salmon and halibut. When it comes to discussing Enbridge, the only answer is no.
 ---
 {% include JB/setup %}
