@@ -355,10 +355,8 @@
                             $text.html(news)
                             y++
                         } else {
-                            alert('should break');
                             break;
                         }              
-                        alert('broken');
                     }
                     $text.html($prefinish)
 
