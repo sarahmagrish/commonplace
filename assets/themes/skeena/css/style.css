@@ -618,6 +618,11 @@ div[data-hash=welcome] .contentText div:last-child div.column>p:last-child:after
 .page-content hr {margin-left:28%;}
 .page-content strong {color:rgb(51,150,243); font-weight: bold;}
 
+.leaflet-tile-container {
+  height: 100%!important;
+  width: 100%!important;
+}
+
 .leaflet-container .page-content img {
   float: left;
 /*  padding-right: 25px;
@@ -1158,6 +1163,12 @@ div.next-story {display:none; text-align: center;padding-right:15px;}
   border:none;
 }
 
+.leaflet-popup a {
+  font-family: AvenirLT-Light;
+  text-align: center;
+  font-size: .9em;
+}
+
 .leaflet-popup hr {
   margin: 0 auto;
   width: 25%;
@@ -1211,10 +1222,27 @@ div.next-story {display:none; text-align: center;padding-right:15px;}
 }
 
 .at16nc.at16t_email {
-  background:transparent url(../img/email_wht.png) no-repeat left center !important;
+  background:transparent url(../img/email_wht.png) no-repeat left top !important;
   width:25px;
-  height:22px;
+  height:17px;
 }
+
+.dark .at16nc.at16t_facebook {
+  background-position:bottom !important;
+}
+
+.dark .at16nc.at16t_twitter {
+  background-position:bottom !important;
+}
+
+.dark .at16nc.at16t_google_plusone_share {
+  background-position:bottom !important;
+}
+
+.dark .at16nc.at16t_email {
+  background-position:bottom !important;
+}
+
 
 .leaflet-label {
   background: rgb(235, 235, 235);

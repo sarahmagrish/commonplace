@@ -98,6 +98,7 @@
                 $textify = $this.children(":first")
                 $contentText = $textify.children(":first")
                 touch()
+
                 if ($text.find('img')
                     .length > 0) {
                     $text.find('img')
@@ -213,7 +214,6 @@
             }
 
             function analyzeContent(obj, box) {
-				
 				
                 if (obj.contents()
                     .length > 0 && $text.text()
@@ -332,27 +332,31 @@
                     while ($column.height() <= columnHeight) {
 
                         box.append(allChars[y] + ' ')
-                        $prefinish = $text.html()
-                        if ((allChars[y].indexOf('[') > -1) || (allChars[y].indexOf(']') > -1) || (allChars[y].indexOf('(') > -1) || (allChars[y].indexOf(')') > -1) || (allChars[y].indexOf('?') > -1) || (allChars[y].indexOf('.') > -1)) {
-                            thisChar = allChars[y].replace(/[[]/g, '[[]')
-                            thisChar = thisChar.replace(/[]]/g, '[]]')
-                            thisChar = thisChar.replace(/[(]/g, '[(]')
-                            thisChar = thisChar.replace(/[)]/g, '[)]')
-                            thisChar = thisChar.replace(/[?]/g, '[?]')
-                            thisChar = thisChar.replace(/[.]/g, '[.]')
+                        $prefinish = $text.html();
+                        if (allChars[y]) {
+                            if ((allChars[y].indexOf('[') > -1) || (allChars[y].indexOf(']') > -1) || (allChars[y].indexOf('(') > -1) || (allChars[y].indexOf(')') > -1) || (allChars[y].indexOf('?') > -1) || (allChars[y].indexOf('.') > -1)) {
+                                thisChar = allChars[y].replace(/[[]/g, '[[]')
+                                thisChar = thisChar.replace(/[]]/g, '[]]')
+                                thisChar = thisChar.replace(/[(]/g, '[(]')
+                                thisChar = thisChar.replace(/[)]/g, '[)]')
+                                thisChar = thisChar.replace(/[?]/g, '[?]')
+                                thisChar = thisChar.replace(/[.]/g, '[.]')
 
 
-                        } else if (allChars[y].indexOf('&') > -1) {
-                            thisChar = "&amp;"
+                            } else if (allChars[y].indexOf('&') > -1) {
+                                thisChar = "&amp;"
+                            } else {
+                                thisChar = allChars[y]
+                            }
+                            var myRegExp = new RegExp("(?![^<>]*>)" + thisChar)
+                            news = $text.html()
+                            news = news.replace(/\&nbsp\;/g, ' ')
+                            news = news.replace(myRegExp, '');
+                            $text.html(news)
+                            y++
                         } else {
-                            thisChar = allChars[y]
-                        }
-                        var myRegExp = new RegExp("(?![^<>]*>)" + thisChar)
-                        news = $text.html()
-                        news = news.replace(/\&nbsp\;/g, ' ')
-                        news = news.replace(myRegExp, '');
-                        $text.html(news)
-                        y++
+                            break;
+                        }              
                     }
                     $text.html($prefinish)
 
