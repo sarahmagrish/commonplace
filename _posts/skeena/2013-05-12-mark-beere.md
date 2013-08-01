@@ -20,6 +20,6 @@ Mark Beere has a map of northwestern British Columbia at his desk. He’s been l
 
 Beere studied zoology at the University of British Columbia, focusing on fisheries, and then went to work for the UBC Fisheries Research Section. A few years later he heard a position had opened in Smithers. He didn’t want to believe the rumor was true; it was too close to the dream. “I was afraid to put my name in the hat because it would have been too heartbreaking if it didn’t work out,” he says.  But he did, and it did. That’s how it all began. 
 
-Looking at his map twenty-five years, Beere, still a fisheries biologist, wonders what this area will become in another twenty-five years.
+Looking at his map twenty-five years later, Beere, still a fisheries biologist, wonders what this area will become in another twenty-five years.
 
 “Geographically, we’re nestled in this special place…it’s such a magical system, with its own rhythm," he says. "As that pattern unfolds, the details are so far beyond comprehension. We just scratch the surface of the how and the why."	
