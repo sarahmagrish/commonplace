@@ -1151,6 +1151,9 @@ div.next-story {display:none; text-align: center;padding-right:15px;}
   color:#333;
 }
 
+.leaflet-marker-icon.leaflet-div-icon {
+  z-index: 1200!important;
+}
 .leaflet-container {
   font:inherit;
 }

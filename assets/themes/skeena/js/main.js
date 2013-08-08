@@ -246,6 +246,7 @@ if (window.location.hash) {
                     map.touchZoom.enable();
                     map.doubleClickZoom.enable();
                     map.scrollWheelZoom.enable();
+                    shownPopup.openPopup();
                 } else {
                     // map.removeLayer(markerLayer);
                     $('.swiper-root').removeClass('no-touch-event');

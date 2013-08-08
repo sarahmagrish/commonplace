@@ -2,7 +2,7 @@ var center = {
     lat: 54,
     lon: -130
 };
-var zoom = 6;
+var zoom = 7;
 
 // Create a map
 window.map = L.mapbox.map('map', null, { 
@@ -15,6 +15,7 @@ window.map = L.mapbox.map('map', null, {
     ]
 });
 
+var shownPopup;
 
 map.dragging.disable();
 map.touchZoom.disable();
@@ -29,9 +30,8 @@ map.setView([center.lat, center.lon], zoom);
 function onEachFeature_wide(feature, layer) {
     layer.on('click', function (e) {  
         var zoom = map.getZoom();
-        console.log(zoom);
         var point = new L.latLng(e.target.feature.properties.coordinates);
-        if (zoom < 8) {
+        if (zoom <= 8) {
             map.setView(point,zoom+3);
         } 
     });
@@ -45,6 +45,9 @@ function onEachFeature(feature, layer) {
         minWidth: 320,
         autoPanPadding: new L.Point(75, 75)
     });
+    if (feature.properties.title === 'Heirs Of Dimlahamid') {
+        shownPopup = layer;
+    }
 }
 
 var voicesLayer = L.geoJson(voices, {
