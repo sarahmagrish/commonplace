@@ -10,12 +10,12 @@
 
 @font-face {font-family: 'AvenirLT-Medium';src: url('../webfonts/277CBE_0_0.eot');src: url('../webfonts/277CBE_0_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/277CBE_0_0.woff') format('woff'),url('../webfonts/277CBE_0_0.ttf') format('truetype');}  
 @font-face {font-family: 'AvenirLT-Light';src: url('../webfonts/277CBE_1_0.eot');src: url('../webfonts/277CBE_1_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/277CBE_1_0.woff') format('woff'),url('../webfonts/277CBE_1_0.ttf') format('truetype');}
-@font-face {font-family: 'AvenirLT-LightOblique';src: url('../webfonts/277CBE_2_0.eot');src: url('../webfonts/277CBE_2_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/277CBE_2_0.woff') format('woff'),url('../webfonts/277CBE_2_0.ttf') format('truetype');}
-@font-face {font-family: 'AvenirLT-Black';src: url('../webfonts/277CBE_3_0.eot');src: url('../webfonts/277CBE_3_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/277CBE_3_0.woff') format('woff'),url('../webfonts/277CBE_3_0.ttf') format('truetype');}
+/*@font-face {font-family: 'AvenirLT-LightOblique';src: url('../webfonts/277CBE_2_0.eot');src: url('../webfonts/277CBE_2_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/277CBE_2_0.woff') format('woff'),url('../webfonts/277CBE_2_0.ttf') format('truetype');}*/
+/*@font-face {font-family: 'AvenirLT-Black';src: url('../webfonts/277CBE_3_0.eot');src: url('../webfonts/277CBE_3_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/277CBE_3_0.woff') format('woff'),url('../webfonts/277CBE_3_0.ttf') format('truetype');}*/
   
 @font-face {font-family: 'CenturySchoolbookBT-Roman';src: url('../webfonts/273126_0_0.eot');src: url('../webfonts/273126_0_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/273126_0_0.woff') format('woff'),url('../webfonts/273126_0_0.ttf') format('truetype');}
 @font-face {font-family: 'CenturySchoolbookBT-Italic';src: url('../webfonts/273126_1_0.eot');src: url('../webfonts/273126_1_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/273126_1_0.woff') format('woff'),url('../webfonts/273126_1_0.ttf') format('truetype');}
-@font-face {font-family: 'CenturySchoolbookBT-Bold';src: url('../webfonts/273126_2_0.eot');src: url('../webfonts/273126_2_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/273126_2_0.woff') format('woff'),url('../webfonts/273126_2_0.ttf') format('truetype');}
+/*@font-face {font-family: 'CenturySchoolbookBT-Bold';src: url('../webfonts/273126_2_0.eot');src: url('../webfonts/273126_2_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/273126_2_0.woff') format('woff'),url('../webfonts/273126_2_0.ttf') format('truetype');}*/
 @font-face {font-family: 'CenturySchoolbookBT-BoldItalic';src: url('../webfonts/273126_3_0.eot');src: url('../webfonts/273126_3_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/273126_3_0.woff') format('woff'),url('../webfonts/273126_3_0.ttf') format('truetype');}
 /*@font-face {font-family: 'CenturySchoolbookBT-BoldCond';src: url('../webfonts/273126_4_0.eot');src: url('../webfonts/273126_4_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/273126_4_0.woff') format('woff'),url('../webfonts/273126_4_0.ttf') format('truetype');}
 @font-face {font-family: 'CenturySchoolbookBT-Monospace';src: url('../webfonts/273126_5_0.eot');src: url('../webfonts/273126_5_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/273126_5_0.woff') format('woff'),url('../webfonts/273126_5_0.ttf') format('truetype');}
@@ -27,10 +27,10 @@
     font-family: CenturySchoolbookBT-Roman;
 }
 
-.schoolbook-bold {
+/*.schoolbook-bold {
     font-family: CenturySchoolbookBT-Bold;
 }
-
+*/
 .intro {
     font-family:Intro-Black-Caps;
 }
@@ -51,7 +51,8 @@
   color:#333333;
 }
 
-html, body {overflow: hidden;}
+body {overflow: hidden;}
+
 
 html, body, .container, .content, .section {
   height: 100%;
@@ -71,6 +72,13 @@ a {
   color: inherit;
 }
 
+/*remove orange outline on tap*/
+:hover, :active, :focus{
+    outline: 0;
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
 .center {text-align: center;}
 .small {font-size:.8em;}
 /*set hover opacity for main UI elements*/
@@ -78,13 +86,15 @@ a {
 .no-touch .textify_nav li:hover,
 .no-touch .popover-close:hover,
 .no-touch .left-arrow:hover, .no-touch .right-arrow:hover,
-.no-touch .leaflet-marker-pane img:hover{
+.no-touch .leaflet-marker-pane img:hover,
+.no-touch .legend li:hover{
   /* IE 8 */  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=65)";
   /* IE 5-7 */  filter: alpha(opacity=65);
   /* Netscape */  -moz-opacity: 0.65;
   /* Safari 1.x */  -khtml-opacity: 0.65;
   /* Good browsers */ opacity: 0.65;
-  
+
+  cursor: pointer;  
     -webkit-transition: all .3s ease-in-out;
   -moz-transition: all .3s ease-in-out;
   -ms-transition: all .3s ease-in-out;
@@ -320,6 +330,8 @@ span.of {font-size:.9em;}
         box-shadow:none;
 }
 
+.dark .toc-section .popover { border-top:1px solid #333;}
+
 .toc-section a {
    color:rgb(51,150,243);
 }
@@ -391,14 +403,15 @@ span.of {font-size:.9em;}
   display:inline-block;
   vertical-align: top;
 }
+.toc-section .popover .container .story .story-author { margin-bottom:5px;color:#333;}
 .toc-section .popover .container .story .story-title {
   text-transform: uppercase;
   color: black;
   font-size: 16px;
   vertical-align: middle;
     border-top: 1px solid rgb(107,103,101);
-  margin-top: 13px;
-  padding-top:12px;
+  margin-top: 0px;
+  padding-top:5px;
 
 }
 .toc-section .popover .container .story .story-category {
@@ -440,7 +453,7 @@ span.of {font-size:.9em;}
 
 .about-masthead .row.break-line { padding-bottom:25px;border-bottom:1px dashed #CCC;}
 
-.about-masthead h5{
+.about-masthead h5, .the-team h5{
   font-weight:normal;
   font-family: CenturySchoolbookBT-Italic;
   color:#333;
@@ -451,7 +464,7 @@ span.of {font-size:.9em;}
   margin-bottom:0;
 }
 
-
+.the-team > .row {margin-bottom:15px;}
 
 .root-container {
   /*background: url({{ ASSET_PATH }}skeena/img/cover.jpg) no-repeat center;*/
@@ -520,7 +533,7 @@ width: 5px;
   }
   .legend h3 {
     margin: 15px 0 0 0;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 1;
   }
   .legend h4 {
@@ -539,7 +552,7 @@ width: 5px;
     height: 20px;
   }
   .legend ul {margin-top:45px;}
-  .legend ul li {padding:0 0 45px 15px};
+  .legend ul li {padding:0 0 25px 15px};
   .legend h4 {
     color: rgb(40,40,40);
   }
@@ -592,7 +605,7 @@ box-shadow:         3px 3px 26px rgba(50, 50, 50, 0.99);}
   padding: 0px 5% 0px 5%;
   margin-top:5%;
   overflow: hidden;
-  height: 90%;
+  height: 85%;
   -webkit-transition: opacity 0.5s ease-in-out;
   -moz-transition: opacity 0.5s ease-in-out;
   transition: opacity 0.5s ease-in-out;
@@ -604,7 +617,7 @@ box-shadow:         3px 3px 26px rgba(50, 50, 50, 0.99);}
   padding-right: 25%;
 }
 
-.contentText div:last-child div.column>p:last-child:after {
+.contentText div:last-child div.column>p:last-child:after, .voice-content-text p:last-child:after{
   display: inline-block;
   content: "";
   width: 19px;
@@ -624,27 +637,31 @@ div[data-hash=welcome] .contentText div:last-child div.column>p:last-child:after
 }
 
 .leaflet-container .page-content img {
-  float: left;
-/*  padding-right: 25px;
+  /*float: left;*/
+  padding-right: 25px;
   padding-top: 10px;
   padding-bottom: 10px;
-*/  max-width: 250px !important;
+  max-width: 250px !important;
   max-height: 300px;
   height:auto !important;
   margin-left:-12% !important;
   cursor: pointer;
 }
+.leaflet-container .page-content img.img-circle { padding:0;}
 
-.page-content .textify span.caption {
+.page-content span.caption {
+  /*float: left;*/
   line-height: 1.2em;
   position: absolute;
   top: 0;
-  left: 0;
+  /*left: 0;*/
   width: 17%;
-  text-align: right;
+  text-align: left;
   font-size: .9em;
-  color: rgb(51,150,243);
+  margin-left:2%;
+  font-family: CenturySchoolbookBT-Italic;
 }
+
 
 .page-content blockquote {
   border:none;
@@ -654,13 +671,13 @@ div[data-hash=welcome] .contentText div:last-child div.column>p:last-child:after
 .page-content blockquote p {
     color: rgb(51,150,243);
     font-size: 1.7em;
-  font-family: CenturySchoolbookBT-Roman;
+    font-family: CenturySchoolbookBT-Italic;
     padding:0;
     padding-right:40%;
 }
 .page-content blockquote blockquote {padding-right:0;}
 .page-content blockquote blockquote p {
-  font-family: CenturySchoolbookBT-Italic;
+  font-family: CenturySchoolbookBT-Roman;
   font-weight: normal;
   color: black;
   font-size: 1em;
@@ -890,12 +907,13 @@ div.next-story {display:none; text-align: center;padding-right:15px;}
   }
 
   .page.full .page-wrapper {
-    padding-top:275px;
+    padding-top:145px;
+    padding-bottom: 40px;
   }
 
 
   .general-pagination .swiper-pagination-switch {
-    margin:0 3px;
+    margin:0 5px;
   }
 
   .gallery-intro-slide-wrapper {
@@ -905,11 +923,14 @@ div.next-story {display:none; text-align: center;padding-right:15px;}
 
   .page.full .right-arrow {
     margin-right:20px;
+
   }
 
   .page.full .left-arrow {
     margin-left:20px;
   }
+
+  .page.full div.next-story {padding-right: 0;float: right;width: 95px;}
 
   /*move and increase size of base slide area becuase pagination is now above the photos*/
   .page.full .gallery-slide {
@@ -1157,6 +1178,8 @@ div.next-story {display:none; text-align: center;padding-right:15px;}
 .leaflet-container {
   font:inherit;
 }
+
+.leaflet-map-pane .leaflet-marker-icon span {font-family: Intro-Black-Caps;color: white;padding-left: 9px;}
 
 .leaflet-popup .popover-title {
   font-family: Intro-Black-Caps;

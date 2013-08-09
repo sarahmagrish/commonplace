@@ -3,7 +3,7 @@ layout: post
 category : Gallery
 tags: ['story']
 toc-img: cassiar.jpg
-author:
+author: Mark Bell &amp; Justine Crawford
 issue: Skeena
 path: Cassiar slideshow
 slideshow:
