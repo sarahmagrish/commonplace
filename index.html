@@ -28,11 +28,8 @@ tagline: Supporting tagline
     <li data-layer="voices" class="layer-on">Voices <img src="{{ASSET_PATH}}skeena/img/map/map_voice_grey.png"></li>
     <li data-layer="images" class="layer-on">Images <img src="{{ASSET_PATH}}skeena/img/map/map_image_grey.png"></li>
     <li data-layer="essays" class="layer-on">Essays <img src="{{ASSET_PATH}}skeena/img/map/map_essay_grey.png"></li>
-  </li>
-  <hr/>
-  <ul class="unstyled">
-    <li data-layer="places">Places</li>
-    <li data-layer="pipeline">Pipeline Route</li>
+    <li data-layer="places">Places <img src="{{ASSET_PATH}}skeena/img/map/map_place_plus.png"></li>
+    <li data-layer="pipeline">Pipeline Route<br /><span class="avenir-light">The proposed Skeena pipeline would cross more than 1500 streams and rivers and fragment sensitive wildlife habitat.</span></li>
 </div>
 
 <!-- TABLE OF CONTENTS CONTENT -->
@@ -40,7 +37,17 @@ tagline: Supporting tagline
   <div class="popover-close">close</div>
   <div class="container narrow toc-container">
       {% for post in site.tags.story reversed %}
-      {% if post.category != "Reader Voices" %}
+
+        {% if forloop.index == 2 %}
+          <div class="story" data-story="#skeena-map">
+            <a href="#">
+              <img src="{{ASSET_PATH}}skeena/img/TOC/map.jpg" height="100" width="100" class="img-circle">
+              <h4 class="story-category">Interactive Map</h4>
+              <p class="story-author">Skeena Region</p>
+              <h3 class="story-title">Explore the Skeena</h3>
+            </a>
+          </div>
+        {% endif %}
 
         {% if forloop.index == 3 %}
           <div class="story" data-story="#voices">
@@ -61,7 +68,7 @@ tagline: Supporting tagline
              <h3 class="story-title">{{ post.title }}</h3>
             </a>
           </div>
-      {% endif %}
+
       {% endfor %}
   </div>
 </div>
@@ -89,8 +96,8 @@ tagline: Supporting tagline
                     <form action="http://ecotrust.us5.list-manage.com/subscribe/post?u=2263c982fe55ebaa023041b8b&amp;id=0ca3d50af5" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
                     <div class="mc-field-group">
                       <label for="mce-EMAIL" style="font-size:25px; display:none;">your email address here</label><br>
-                      <input placeholder="Sign up for Commonplace emails here" required="" type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
-                        <input type="submit" value="subscribe »" name="subscribe" id="mc-embedded-subscribe" class="button">
+                      <input placeholder="Sign up for Commonplace emails here" required="" type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" style="-webkit-border-radius: 2px; border-radius: 2px;-moz-border-radius:2px;">
+                        <input style="background-color: #f5f5f5; border: 1px solid #CCC;-webkit-border-radius: 2px; border-radius: 2px;-moz-border-radius:2px;" type="submit" value="subscribe »" name="subscribe" id="mc-embedded-subscribe" class="button">
                     </div>
                     <div class="mc-field-group input-group">
                         <ul style="display:none;"><li><input type="checkbox" value="1" name="group[2281][1]" id="mce-group[2281]-2281-0"><label for="mce-group[2281]-2281-0">Ecotrust eNews</label></li>
@@ -144,10 +151,10 @@ tagline: Supporting tagline
   <div class="popover-close">close</div>
   <div class="container about-container">
     <div class="row">
-      <div class="span2">
+      <div class="span3">
       <p class="toc-sidebar">About Commonplace</p>
       </div>
-      <div class="span6 about-content">
+      <div class="span5 about-content">
         <p>Commonplace is a publication of <a href="http://www.ecotrust.org">Ecotrust</a> focused on stories of home. Our hope is to create places for connection, for mapping out new understandings of what is common across states, nations, and human nature. We look forward to hearing your stories about the places you live, your experiences of the stories we publish, and your ideas about how to evolve Commonplace in future issues. Share your thoughts on <a href="http://www.facebook.com/commonplacemagazine">Facebook</a>, <a href="https://twitter.com/Commonplacemag">Twitter</a>, or write to us at <a href="mailto:info@commonplacemagazine.org">info@commonplacemagazine.org</a></p>
       </div>
       <div class="span4 about-masthead">
@@ -168,51 +175,123 @@ tagline: Supporting tagline
             <p class="black">cholland@ecotrust.org</p>
           </div>
         </div>
-
-        <div class="row">
-          <div class="span6">
-            <h5>Managing Editor</h5>
-            <p>Oakley Brooks</p>
-          </div>
-          <div class="span6">
-            <h5>Contributing Editors</h5>
-            <p>Jim Norton</p>
-            <p>Sam Beebe</p>
-            <p>Emma Deans</p>
-            <p>Lola Milholland</p>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="span6">
-            <h5>Design Director</h5>
-            <p>Sarah Magrish Cline</p>
-          </div>
-          <div class="span6">
-            <h5>Developers</h5>
-            <p>Edwin Knuth</p>
-            <p>Lucas Balzer</p>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="span6">
-            <h5>Editorial Intern</h5>
-            <p>Sabin Ray</p>
-          </div>
-          <div class="span6">
-            <h5></h5>
-            <p></p>
-          </div>
-        </div>
-
       </div> <!-- end masthead column -->
-    </div> <!-- end main row inside the content container -->
+    </div> <!-- end first row inside the content container -->
     <div class="row">
-      <div class="span2">
+
+      <div class="span3">
+        <p class="toc-sidebar">The Team</p>
+      </div>
+
+      <div class="span9 the-team"> <!-- The Team cell -->
+        <div class="row"> 
+
+          <div class="span4">
+            <div class="row">
+              <div class="span3"><img src="assets/themes/skeena/img/contributor-headshots/carolyn.jpg" height="100" width="100" class="img-circle"></div>
+              <div class="span7">
+                <h5>Managing Editor</h5>
+                <p>Oakley Brooks</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="span4">
+            <div class="row">
+              <div class="span3"><img src="assets/themes/skeena/img/contributor-headshots/carolyn.jpg" height="100" width="100" class="img-circle"></div>
+              <div class="span7">
+                <h5>Contributing Editor</h5>
+                <p>Jim Norton</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="span4">
+            <div class="row">
+              <div class="span3"><img src="assets/themes/skeena/img/contributor-headshots/carolyn.jpg" height="100" width="100" class="img-circle"></div>
+              <div class="span7">
+                <h5>Contributing Editor</h5>
+                <p>Sam Beebe</p>
+              </div>
+            </div>
+          </div>
+
+        </div> <!-- end team sub row -->
+        <div class="row"> 
+
+          <div class="span4">
+            <div class="row">
+              <div class="span3"><img src="assets/themes/skeena/img/contributor-headshots/carolyn.jpg" height="100" width="100" class="img-circle"></div>
+              <div class="span7">
+                <h5>Contributing Editor</h5>
+                <p>Emma Deans</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="span4">
+            <div class="row">
+              <div class="span3"><img src="assets/themes/skeena/img/contributor-headshots/carolyn.jpg" height="100" width="100" class="img-circle"></div>
+              <div class="span7">
+                <h5>Contributing Editor</h5>
+                <p>Lola Milholland</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="span4">
+            <div class="row">
+              <div class="span3"><img src="assets/themes/skeena/img/contributor-headshots/carolyn.jpg" height="100" width="100" class="img-circle"></div>
+              <div class="span7">
+                <h5>Design Director</h5>
+                <p>Sarah Magrish Cline</p>
+              </div>
+            </div>
+          </div>
+
+        </div> <!-- end team sub row -->
+        <div class="row"> 
+
+          <div class="span4">
+            <div class="row">
+              <div class="span3"><img src="assets/themes/skeena/img/contributor-headshots/carolyn.jpg" height="100" width="100" class="img-circle"></div>
+              <div class="span7">
+                <h5>Developer</h5>
+                <p>Edwin Knuth</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="span4">
+            <div class="row">
+              <div class="span3"><img src="assets/themes/skeena/img/contributor-headshots/lucas-balzer.jpg" height="100" width="100" class="img-circle"></div>
+              <div class="span7">
+                <h5>Developer</h5>
+                <p>Lucas Balzer</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="span4">
+            <div class="row">
+              <div class="span3"><img src="assets/themes/skeena/img/contributor-headshots/carolyn.jpg" height="100" width="100" class="img-circle"></div>
+              <div class="span7">
+                <h5>Editorial Intern</h5>
+                <p>Sabin Ray</p>
+              </div>
+            </div>
+          </div>
+
+        </div> <!-- end team sub row -->
+
+      </div> <!-- end The Team cell -->
+    </div> <!-- end The Team row -->
+
+    <div class="row">
+      <div class="span3">
         <p class="toc-sidebar">Acknowledgements</p>
       </div>
-      <div class="span6 about-content">
+      <div class="span9 about-content">
       <p>We extend our gratitude first and foremost to the people of the Skeena, who shared their stories and homes in contribution to this project.  And there are many others that we would like to give our heartfelt thanks:</p>        
       <p>To The Charles Engelhard Foundation, Faraway Foundation, Thendara Foundation, Deborah J. and Peter A. Magowan Family Foundation, Neukom Family Foundation, and The Tim and Karen Hixon Foundation whose generous contributions made this project possible.</p>        
       <p>To our friends at Ecotrust Canada and Skeena Wild Conservation Trust, who are working on the ground in Skeena Country at the intersection of conservation and community economic development.</p>        
@@ -220,7 +299,6 @@ tagline: Supporting tagline
       <p>To Benjamin Drummond and Sara Joy Steele, who, along with many other Blue Earth photographers and media artists, shared invaluable ideas and feedback as this project was under development.</p>        
       <p>To Gary Fiegehen, Terry Glavin, Wade Davis, Neil Ever Osborne and Carr Clifton for their contributions to this project.</p>
       </div>
-      <div class="span4"></div>
     </div>
   </div> <!-- end about content container -->
 </div> <!-- end about content wrapper div -->
@@ -241,7 +319,11 @@ tagline: Supporting tagline
             <p class="issue-number blue"><span class="schoolbook">Issue</span> <span class="intro">01</span></p>
             <p>One of North America’s last great salmon watersheds faces an unprecedented&mdash;almost mythical&mdash;round of industrial development. A collection of essays, slideshows and audio vignettes examines the history and resolve of people in this unique place, facing challenges all too common. <span class="schoolbook">Published Summer 2013</span></p>
           </div>
-          <div class="span6"></div>
+          <div class="span6">
+            <p class="issue-title intro-inline">XYZ Voices</p>
+            <p class="issue-number blue"><span class="schoolbook">Issue</span> <span class="intro">02</span></p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum euismod nulla eu eleifend consectetur. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. <span class="schoolbook">Coming Winter 2013</span></p>
+          </div>
         </div>
       </div>
     </div>
@@ -405,6 +487,11 @@ tagline: Supporting tagline
                   </div> <!-- end swiper container -->
               </div>
             </div> <!-- end full page container for styling -->
+            <div class="page-footer">
+              <a href="#">
+              <i class="icon-chevron-down"></i>
+              </a>
+            </div>
           </div> <!-- end vertical slide for voices -->
 
         {% endif %} <!-- end the block that inserts voices into the post stream -->
@@ -511,7 +598,9 @@ tagline: Supporting tagline
                 {% else %}
                 <div class="page-content long-post post hidden">
                 {% endif %}
+                <div class="columns">
                   {{ post.content }}
+                </div>
                 </div>
                 {% endif %}
               </div>
