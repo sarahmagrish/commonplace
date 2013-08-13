@@ -87,6 +87,8 @@ if (window.location.hash) {
             onSlideChangeStart: function (swiper) {
                 var $slide = $(swiper.getSlide(swiper.realIndex));
 
+                window.noCols = false;
+                window.blockSlideChange = false;
                 if (!$slide.hasClass('marker-slide')) {
                     //$('#map').children('div:last-child').removeClass('active-map');
                     $('.swiper-root').addClass('no-touch-event');
@@ -100,6 +102,7 @@ if (window.location.hash) {
                     map.doubleClickZoom.disable();
                     map.scrollWheelZoom.disable();
                 }
+
             },
             onSlideChangeEnd: function (swiper) {
                 var $slide = $(swiper.getSlide(swiper.realIndex)),
@@ -187,15 +190,26 @@ if (window.location.hash) {
                         });
                    });
                     
-                   
-                    $('.columns',$longPost).css({'-webkit-column-width':contentWidth,
-                                                '-moz-column-width':contentWidth,
-                                                'column-width':contentWidth,
-                                                '-webkit-column-gap':0,
-                                                '-moz-column-gap':0,
-                                                'column-gap':0,
-                                                'height':'100%'});
+                    if ($('.columns',$longPost).length) {
+                        $('.columns',$longPost).css({'-webkit-column-width':contentWidth,
+                            '-moz-column-width':contentWidth,
+                            'column-width':contentWidth,
+                            '-webkit-column-gap':0,
+                            '-moz-column-gap':0,
+                            'column-gap':0,
+                            'height':'100%'});
+                        window.noCols = false;
+                    }  else {
+                        window.blockSlideChange = true;
+                        window.noCols = true;
+                        $longPost.find('.no-columns').css({'overflow': 'scroll', 'height': $longPost.closest('.page').height() })
+                        $longPost.closest('.page').find('.navarrows').remove();
+                        console.log('no-cols');
+                        console.log(window.blockSlideChange)
 
+                    }
+
+                    
 
                     setTimeout(function () {theImages.each(function () {
                         var $this=$(this),
@@ -300,7 +314,10 @@ if (window.location.hash) {
                 } else {
                     // map.removeLayer(markerLayer);
                     $('.swiper-root').removeClass('no-touch-event');
-                    window.blockSlideChange=false;
+                    if (! window.noCols) {
+                        window.blockSlideChange=false;    
+                    }
+                    
                 }
 
             }, // end on slideChangeEnd callback for main vertical slider

@@ -5,6 +5,7 @@ category: "Reader Voices"
 author: commonplace readers
 tags: ['story']
 issue: Skeena
+paginate: no
 toc-img: your-voice.jpg
 story-img: your-voice.jpg
 story-img-caption: Near Stuart River. Photo by Neil Ever Osborne

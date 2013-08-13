@@ -597,8 +597,13 @@ tagline: Supporting tagline
                 {% else %}
                 <div class="page-content long-post post hidden">
                 {% endif %}
+                {% if post.category == 'Reader Voices' %}
+                <div class="no-columns">
+                {% else %}
                 <div class="columns">
+                {% endif %}
                   {{ post.content }}
+                }
                 </div>
                 </div>
                 {% endif %}
