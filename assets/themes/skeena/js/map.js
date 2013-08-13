@@ -133,19 +133,19 @@ $.get('assets/themes/skeena/places/pipeline.geojson', function (data) {
     layers_wide.pipeline = layers.pipeline;
 });
 
-$.get('assets/themes/skeena/places/places.geojson', function (data) {
-    layers.places = new L.GeoJSON(JSON.parse(data), {
-        pointToLayer: function (feature, latlng) {
-            return L.marker(latlng, {
-                icon: L.divIcon({
-                    html: '<img src="assets/themes/skeena/img/map/map_place_plus.png"><span>' + feature.properties.Feature + '</span>',
-                    opacity: feature.properties.Class_Deta === 'Town' ? 1: 0
-                })
-            });
-        }
-    });
-    layers_wide.places = layers.places;
-});
+// $.get('assets/themes/skeena/places/places.geojson', function (data) {
+//     layers.places = new L.GeoJSON(JSON.parse(data), {
+//         pointToLayer: function (feature, latlng) {
+//             return L.marker(latlng, {
+//                 icon: L.divIcon({
+//                     html: '<img src="assets/themes/skeena/img/map/map_place_plus.png"><span>' + feature.properties.Feature + '</span>',
+//                     opacity: feature.properties.Class_Deta === 'Town' ? 1: 0
+//                 })
+//             });
+//         }
+//     });
+//     layers_wide.places = layers.places;
+// });
 
 
 var layers = {
