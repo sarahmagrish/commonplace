@@ -125,8 +125,9 @@ if (window.location.hash) {
                 // show or hide the nav
                 if ($slide.data('hash')) {
                     window.location.hash = $slide.data('hash');
-                    _gaq.push(['_trackPageview',location.pathname + location.search  + location.hash]);
-
+                    if(typeof _gaq !== 'undefined'){
+                      _gaq.push(['_trackPageview',location.pathname + location.search  + location.hash]);
+                    };
                 }
                if (swiper.activeIndex !== 0) {
                     $masthead.removeClass('hidden');
