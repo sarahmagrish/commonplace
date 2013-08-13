@@ -1178,7 +1178,9 @@ div.next-story {display:none; text-align: center;padding-right:15px;}
 .leaflet-container {
   font:inherit;
 }
-
+.leaflet-marker-icon {
+  width: 30px;
+}
 .leaflet-map-pane .leaflet-marker-icon span {font-family: Intro-Black-Caps;color: white;padding-left: 9px;}
 
 .leaflet-popup .popover-title {

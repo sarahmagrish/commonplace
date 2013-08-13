@@ -1,6 +1,6 @@
 var center = {
-    lat: 54,
-    lon: -130
+    lat: 55,
+    lon: -128
 };
 var zoom = 7;
 
@@ -10,8 +10,8 @@ window.map = L.mapbox.map('map', null, {
     keyboard: false,
     markerZoomAnimation: false,
     maxBounds:[
-        [60.72, -117.07],
-        [44.59, -149.32]
+        [66.65, -100.19],
+        [39.09, -155.56]
     ]
 });
 
@@ -47,7 +47,7 @@ function onEachFeature(feature, layer) {
         minWidth: 320,
         autoPanPadding: new L.Point(75, 75)
     });
-    if (feature.properties.title === 'Heirs Of Dimlahamid') {
+    if (feature.properties.title === 'Along The Northern Gateway Route') {
         shownPopup = layer;
     }
 }
