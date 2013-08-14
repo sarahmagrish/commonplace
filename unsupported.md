@@ -3,7 +3,8 @@ layout: lite
 title: Skeena Voices
 tagline: Supporting tagline
 ---
-We welcome youto our new digital magazine, Commonplace, which promises to be as much an adventure in new digital landscapes as it is an exploration of real geographies and communities on the ground.  
+We welcome you to our new digital magazine, Commonplace, which promises to be as much an adventure in new digital landscapes as it is an exploration of real geographies and communities on the ground.  
+
 Our first issue focuses on the Skeena Basin in British Columbia—a vast, rugged, and still largely wild region of salmon rivers, ecological productivity and biological, cultural and linguistic diversity. But a series of recent developments have put the otherwise “remote” basin at the epicenter of global trends and convulsions; understanding the Skeena story is in many ways understanding our own story. 
 
 In an age of superstorms, financial meltdowns, and giant pipelines cutting through some of the last, best places on earth, it is clear we need a new approach—a new operating system for the 21st century. We believe this new approach starts at home, in the places we live, work, and play, and in the basic systems such as food, water, energy, shelter that we need to live well. 
