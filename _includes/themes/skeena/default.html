@@ -28,16 +28,19 @@
         N=M[0];
         ver=M[1].split('.')[0];
         switch (N.toLowerCase()) {
-        case "chrome": fail = (parseInt(ver)<28) ? true : false; break;
-        case "msie": fail = (parseInt(ver)<10) ? true : false; break;
-        case "safari": fail = (parseInt(ver)<14) ? true : true; break;
-        case "opera": fail = (parseInt(ver)<5) ? true : false; break;
-        case "firefox": fail = (parseInt(ver)<22) ? true : false; break;
-        if (fail) {
-            //alert('here')
-            //window.location='rest';
+            case "chrome": fail = (parseInt(ver)<28) ? true : false; break;
+            case "msie": fail = (parseInt(ver)<10) ? true : false; break;
+            // safari can report v6 fr the ipad
+            case "safari": fail = ((parseInt(ver)<14) && (parseInt(ver)!==6)) ? true : false; break;
+            case "opera": fail = (parseInt(ver)<5) ? true : false; break;
+            case "firefox": fail = (parseInt(ver)<22) ? true : false; break;
         }
-
+        if (fail) {
+            
+            window.location='rest';
+            
+        }
+        
         </script>
 
 
@@ -86,6 +89,7 @@
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-51d1ef097f96cfdc"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script defer src="{{ASSET_PATH}}/js/backstretch.js"></script>
     <!--<script>
     var bootstrapButton = $.fn.button.noConflict();
     $.fn.bootstrapBtn = bootstrapButton;

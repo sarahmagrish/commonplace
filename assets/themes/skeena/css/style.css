@@ -581,6 +581,10 @@ width: 5px;
 }
 
 
+.unsupported .page-content {
+  padding-top: 5%;
+}
+
 .ink-bg {
   background: url(../img/ink.jpg) left top;
 }
@@ -612,6 +616,14 @@ box-shadow:         3px 3px 26px rgba(50, 50, 50, 0.99);}
 }
 
 
+/*.unsupported .page, .unsupported .page-content {
+  height: auto;
+}
+*/
+.unsupported .page-content {
+  overflow: auto;
+  height: 90%;
+}
 .page-content p {
   padding-left:25%;
   padding-right: 25%;
@@ -1131,6 +1143,10 @@ div.next-story {display:none; text-align: center;padding-right:15px;}
 */
 .leaflet-container img {
   max-width: 100% !important;
+}
+
+.back {
+  height: 100%;
 }
 
 .backstretch img {
