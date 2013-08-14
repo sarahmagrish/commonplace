@@ -21,7 +21,7 @@
             var width = window.innerWidth;
             var height = window.innerHeight;
             var orientation = window.innerHeight > window.innerWidth ? 'portrait': 'landscape';
-            if ((width < 641 && orientation === 'portrait') ||(height < 641 && orientation === 'landscape')) {
+            if (width < 641  ||height < 641) {
                 //window.location.href = "/mobile/mobile";
                 window.location = "{{BASE_PATH}}/mobile.html";
             }
