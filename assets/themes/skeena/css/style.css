@@ -881,6 +881,20 @@ div.next-story {display:none; text-align: center;padding-right:15px;}
 .last-page .right-arrow {background-position: right bottom;}
 .first-page .left-arrow {background-position: left bottom;}
 
+@media (max-width: 641px) {
+  body.unsupported {
+    padding-left: 0;
+  }
+  .unsupported .page {
+    width: 80%;
+    margin: 60px auto;
+  }
+  .page-content p {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
 /* style the sidebar, captions, and gallery slide for tablets */
 @media (max-width: 1024px) {
 
