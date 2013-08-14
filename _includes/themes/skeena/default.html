@@ -23,7 +23,7 @@
             var orientation = window.innerHeight > window.innerWidth ? 'portrait': 'landscape';
             if ((width < 641 && orientation === 'portrait') ||(height < 641 && orientation === 'landscape')) {
                 //window.location.href = "/mobile/mobile";
-                window.location.pathname = "mobile.html";
+                window.location.pathname = "{{BASE_PATH}}/mobile.html";
             }
         </script>
 
@@ -49,7 +49,7 @@
         }
         if (fail) {
             
-            window.location='rest';
+            window.location='{{BASE_PATH}}/unsupported.html';
             
         }
         
