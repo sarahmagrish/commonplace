@@ -5,11 +5,11 @@ var center = {
 var zoom = 7;
 
 // Create a map
-window.map = L.mapbox.map('map', null, { 
+window.map = L.mapbox.map('map', null, {
     zoomControl: false,
     keyboard: false,
     markerZoomAnimation: false,
-    maxBounds:[
+    maxBounds: [
         [66.65, -100.19],
         [39.09, -155.56]
     ]
@@ -22,24 +22,26 @@ map.touchZoom.disable();
 map.doubleClickZoom.disable();
 map.scrollWheelZoom.disable();
 
-new L.Control.Zoom({ position: 'bottomright' }).addTo(map);
+new L.Control.Zoom({
+    position: 'bottomright'
+}).addTo(map);
 
 map.addLayer(L.tileLayer('http://tilestream.apps.ecotrust.org/v2/skeena_final4real/{z}/{x}/{y}.png'));
 map.setView([center.lat, center.lon], zoom);
 
 
 function onEachFeature_wide(feature, layer) {
-    layer.on('click', function (e) {  
+    layer.on('click', function(e) {
         var zoom = map.getZoom();
         var point = new L.latLng(e.target.feature.properties.coordinates);
         if (zoom <= 8) {
-            map.setView(point,zoom+3);
-        } 
+            map.setView(point, zoom + 3);
+        }
     });
 }
 
 function onEachFeature(feature, layer) {
-    var popupContent =  $("#" + feature.properties.popup).html();
+    var popupContent = $("#" + feature.properties.popup).html();
     // console.log('opening');
     layer.bindPopup(popupContent, {
         closeButton: true,
@@ -52,7 +54,7 @@ function onEachFeature(feature, layer) {
 }
 
 var voicesLayer = L.geoJson(voices, {
-    pointToLayer: function (feature, latlng) {
+    pointToLayer: function(feature, latlng) {
         var image = feature.properties.image;
         if (image === '') {
             image = 'map_voice_wht_90.png';
@@ -69,7 +71,7 @@ var voicesLayer = L.geoJson(voices, {
     onEachFeature: onEachFeature
 });
 var voicesLayer_wide = L.geoJson(voices_wide, {
-    pointToLayer: function (feature, latlng) {
+    pointToLayer: function(feature, latlng) {
         var image = feature.properties.image;
         if (image === '') {
             image = 'map_voice_wht_90.png';
@@ -87,7 +89,7 @@ var voicesLayer_wide = L.geoJson(voices_wide, {
 });
 
 var imageLayer = L.geoJson(images, {
-    pointToLayer: function (feature, latlng) {
+    pointToLayer: function(feature, latlng) {
         var image = feature.properties.image;
         if (image === '') {
             image = 'map_image_wht.png';
@@ -105,7 +107,7 @@ var imageLayer = L.geoJson(images, {
 
 
 var essayLayer = L.geoJson(essays, {
-    pointToLayer: function (feature, latlng) {
+    pointToLayer: function(feature, latlng) {
         var image = feature.properties.image;
         if (image === '') {
             image = 'map_essay_wht.png';
@@ -121,7 +123,7 @@ var essayLayer = L.geoJson(essays, {
     onEachFeature: onEachFeature
 });
 
-$.get('assets/themes/skeena/places/pipeline.geojson', function (data) {
+$.get('assets/themes/skeena/places/pipeline.geojson', function(data) {
     layers.pipeline = new L.GeoJSON(JSON.parse(data), {
         style: {
             "color": "black",
@@ -132,7 +134,7 @@ $.get('assets/themes/skeena/places/pipeline.geojson', function (data) {
     layers_wide.pipeline = layers.pipeline;
 });
 
-$.get('assets/themes/skeena/places/yellowheadHWY.geojson', function (data) {
+$.get('assets/themes/skeena/places/yellowheadHWY.geojson', function(data) {
     layers.yellowhead = new L.GeoJSON(JSON.parse(data), {
         style: {
             "color": "#b87300",
@@ -171,30 +173,30 @@ var layers_wide = {
     essays: essayLayer
 };
 var currentLayers = layers_wide;
-map.on('zoomstart', function () {
-    $.each(currentLayers, function (i, layer) {
+map.on('zoomstart', function() {
+    $.each(currentLayers, function(i, layer) {
         map.removeLayer(layer);
     });
 });
 
 
-map.on('zoomend', function () {
+map.on('zoomend', function() {
     var zoom = map.getZoom();
     if (zoom < 9) {
         currentLayers = layers_wide;
     } else {
         currentLayers = layers;
-    } 
-    $('.layer-on').each(function (i, layer) {
+    }
+    $('.layer-on').each(function(i, layer) {
         currentLayers[$(layer).data('layer')].addTo(map);
     });
 });
 
-$(document).ready(function () {
+$(document).ready(function() {
     var currentLayers = layers_wide;
 
     $('.leaflet-control-zoom').addClass('hidden');
-    $('.legend').on('click', 'li', function (e) {
+    $('.legend').on('click', 'li', function(e) {
         var $target = $(e.target);
         $target.toggleClass('layer-on');
 
