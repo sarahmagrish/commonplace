@@ -9,7 +9,7 @@ place: Smithers
 intro: These people have been going to a place on the landscape for thousands of years...they've had a connection to that place."
 toc-img: rickbudhwa.jpg
 story-img: rickbudhwa.jpg
-audio: rickbudhwa.mp3
+audio: rickbudwa.mp3
 transcript: rickbudhwa.pdf
 latitude: 54.782604703
 longitude: -127.201563951
