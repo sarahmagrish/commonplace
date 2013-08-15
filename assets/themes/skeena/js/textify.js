@@ -20,7 +20,7 @@
             width: "screen",
             height: "screen",
             showNavigation: true,
-            textAlign: 'justify',
+            textAlign: 'left',
             isZoom: false
         }
         var myVar;
@@ -45,7 +45,7 @@
                         .remove();
                     myVar = setTimeout(function () {
                         initTextify($cache)
-                    }, 200);
+                        }, 200);
                 }
             });
 
@@ -98,6 +98,7 @@
                 $textify = $this.children(":first")
                 $contentText = $textify.children(":first")
                 touch()
+
                 if ($text.find('img')
                     .length > 0) {
                     $text.find('img')
@@ -124,7 +125,7 @@
                     })
                 } else {
                     addPage()
-                }
+                }                
             }
 
             function setImage(element, thisImg) {
@@ -132,7 +133,7 @@
                     thisImg.css({
                         'display': 'block',
                         'width': columnWidth,
-                        'margin': 0,
+                        'margin-right': '20px',
                         'padding': 0,
                         'margin-bottom':'6px'
                     })
@@ -141,18 +142,18 @@
                         thisImg.css({
                             'display': 'block',
                             'width': 'auto',
-                            'margin': 0,
+                            'margin-right': '20px',
                             'height': columnHeight-100,
                             'padding': 0,
                             'padding-right':'15px'
                         })
                     }
                 } else {
-                    if (element.height >= columnHeight - 100) {
+                    if (element.height >= columnHeight - 150) {
                         thisImg.css({
                             'display': 'block',
-                            'height': columnHeight - 100,
-                            'margin': 0,
+                            'height': columnHeight - 150,
+                            'margin-right': '20px',
                             'padding': 0
                             
                         })
@@ -213,7 +214,6 @@
             }
 
             function analyzeContent(obj, box) {
-				
 				
                 if (obj.contents()
                     .length > 0 && $text.text()
@@ -332,27 +332,31 @@
                     while ($column.height() <= columnHeight) {
 
                         box.append(allChars[y] + ' ')
-                        $prefinish = $text.html()
-                        if ((allChars[y].indexOf('[') > -1) || (allChars[y].indexOf(']') > -1) || (allChars[y].indexOf('(') > -1) || (allChars[y].indexOf(')') > -1) || (allChars[y].indexOf('?') > -1) || (allChars[y].indexOf('.') > -1)) {
-                            thisChar = allChars[y].replace(/[[]/g, '[[]')
-                            thisChar = thisChar.replace(/[]]/g, '[]]')
-                            thisChar = thisChar.replace(/[(]/g, '[(]')
-                            thisChar = thisChar.replace(/[)]/g, '[)]')
-                            thisChar = thisChar.replace(/[?]/g, '[?]')
-                            thisChar = thisChar.replace(/[.]/g, '[.]')
+                        $prefinish = $text.html();
+                        if (allChars[y]) {
+                            if ((allChars[y].indexOf('[') > -1) || (allChars[y].indexOf(']') > -1) || (allChars[y].indexOf('(') > -1) || (allChars[y].indexOf(')') > -1) || (allChars[y].indexOf('?') > -1) || (allChars[y].indexOf('.') > -1)) {
+                                thisChar = allChars[y].replace(/[[]/g, '[[]')
+                                thisChar = thisChar.replace(/[]]/g, '[]]')
+                                thisChar = thisChar.replace(/[(]/g, '[(]')
+                                thisChar = thisChar.replace(/[)]/g, '[)]')
+                                thisChar = thisChar.replace(/[?]/g, '[?]')
+                                thisChar = thisChar.replace(/[.]/g, '[.]')
 
 
-                        } else if (allChars[y].indexOf('&') > -1) {
-                            thisChar = "&amp;"
+                            } else if (allChars[y].indexOf('&') > -1) {
+                                thisChar = "&amp;"
+                            } else {
+                                thisChar = allChars[y]
+                            }
+                            var myRegExp = new RegExp("(?![^<>]*>)" + thisChar)
+                            news = $text.html()
+                            news = news.replace(/\&nbsp\;/g, ' ')
+                            news = news.replace(myRegExp, '');
+                            $text.html(news)
+                            y++
                         } else {
-                            thisChar = allChars[y]
-                        }
-                        var myRegExp = new RegExp("(?![^<>]*>)" + thisChar)
-                        news = $text.html()
-                        news = news.replace(/\&nbsp\;/g, ' ')
-                        news = news.replace(myRegExp, '');
-                        $text.html(news)
-                        y++
+                            break;
+                        }              
                     }
                     $text.html($prefinish)
 
@@ -410,10 +414,12 @@
                                         .attr('class', 'selected')
                                 }
                             }
+
                         })
                     }
                     columnHeight = pageheight - (options.padding * 2) - $('.textify_nav')
-                        .outerHeight()
+                        .outerHeight(false) //added the 'false' here from codecanyon discussion by <histerico> at
+                                            //http://codecanyon.net/item/textify-columnize-and-paginate-your-long-text/discussion/3109307?page=1
 
                 }
                 if ($page.children()
@@ -448,6 +454,7 @@
                                     .width()) / 2)
                             })
                         }
+                        $(document).trigger('textifyBuildDone',$textify);
                     }
                     $contentText.css('width', pagewidth * options.startPage)
                     $contentText.append('<div class="page' + options.startPage + '" />');
@@ -484,6 +491,7 @@
                 $contentText.animate({
                     marginLeft: [-marginLeft, 'easeOutExpo']
                 }, 600);
+                $(document).trigger('textifyNavDone',$textify)
             }
 
             function touch() {
