@@ -132,6 +132,18 @@ $.get('assets/themes/skeena/places/pipeline.geojson', function (data) {
     layers_wide.pipeline = layers.pipeline;
 });
 
+$.get('assets/themes/skeena/places/yellowheadHWY.geojson', function (data) {
+    layers.yellowhead = new L.GeoJSON(JSON.parse(data), {
+        style: {
+            "color": "#b87300",
+            "weight": 2.5,
+            "opacity": 1
+        }
+    });
+    layers_wide.yellowhead = layers.yellowhead;
+});
+
+
 // $.get('assets/themes/skeena/places/places.geojson', function (data) {
 //     layers.places = new L.GeoJSON(JSON.parse(data), {
 //         pointToLayer: function (feature, latlng) {
