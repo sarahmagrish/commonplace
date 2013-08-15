@@ -65,9 +65,14 @@ html, body, .container, .content, .section {
 
 
 a {
-  text-decoration: none !important;
+  text-decoration: underline !important;
   color: inherit;
 }
+
+a:hover {
+  color: #0088cc !important;
+}
+
 .no-touch a:hover {
   color: inherit;
 }
