@@ -25,7 +25,6 @@ map.scrollWheelZoom.disable();
 new L.Control.Zoom({ position: 'bottomright' }).addTo(map);
 
 map.addLayer(L.tileLayer('http://tilestream.apps.ecotrust.org/v2/skeena_final4real/{z}/{x}/{y}.png'));
-// map.addLayer(L.tileLayer('http://tilestream.apps.ecotrust.org/v2/commonplace/{z}/{x}/{y}.png'));
 map.setView([center.lat, center.lon], zoom);
 
 
