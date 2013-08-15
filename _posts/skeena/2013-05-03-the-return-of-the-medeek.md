@@ -219,9 +219,7 @@ In the Sacred Headwaters, the pressure of those usual alliances produced a measu
 
 “The BC government has done the right thing by rejecting the Enbridge pipeline for the company’s failure to protect the environment,” Art Sterritt, executive director of the Coastal First Nations, told reporters. “Coastal First Nations are celebrating this victory today by reaffirming our unequivocal opposition to oil tanker traffic on BC’s North Coast.”
 
-A completely new mindset was beginning to take hold in the countryside. “When we look at things, we don’t look at the environment for the sake of saving the environment,” says Shannon MacPhail, the fourth-generation Kispiox Valley rancher turned activist. “In any decision, you have to look at community, the environment, and the economy, and they all have equal bearing.
-
-“If you’re going strictly for economy, the communities and the environment pay. All three have to be incorporated.”
+A completely new mindset was beginning to take hold in the countryside. “When we look at things, we don’t look at the environment for the sake of saving the environment,” says Shannon MacPhail, the fourth-generation Kispiox Valley rancher turned activist. “In any decision, you have to look at community, the environment, and the economy, and they all have equal bearing. “If you’re going strictly for economy, the communities and the environment pay. All three have to be incorporated.”
 
 ---
 ![Terry Glavin](assets/themes/skeena/img/contributor-headshots/terry_glavin.jpg)
