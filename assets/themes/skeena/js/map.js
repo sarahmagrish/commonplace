@@ -26,7 +26,7 @@ new L.Control.Zoom({
     position: 'bottomright'
 }).addTo(map);
 
-map.addLayer(L.tileLayer('http://tilestream.apps.ecotrust.org/v2/skeena_final4real/{z}/{x}/{y}.png'));
+map.addLayer(L.tileLayer('http://tilestream.apps.ecotrust.org/v2/SkeenaFinal_20130815/{z}/{x}/{y}.png'));
 map.setView([center.lat, center.lon], zoom);
 
 
@@ -127,7 +127,7 @@ $.get('assets/themes/skeena/places/pipeline.geojson', function(data) {
     layers.pipeline = new L.GeoJSON(JSON.parse(data), {
         style: {
             "color": "black",
-            "weight": 6,
+            "weight": 4,
             "opacity": 1
         }
     });
