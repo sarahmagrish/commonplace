@@ -95,7 +95,7 @@ if (window.location.hash) {
                     map.dragging.disable();
                     map.touchZoom.disable();
                     map.doubleClickZoom.disable();
-                    map.scrollWheelZoom.disable();
+                    
                 }
 
             },
@@ -304,7 +304,6 @@ if (window.location.hash) {
                     map.dragging.enable();
                     map.touchZoom.enable();
                     map.doubleClickZoom.enable();
-                    map.scrollWheelZoom.enable();
                     shownPopup.openPopup();
                 } else {
                     // map.removeLayer(markerLayer);
