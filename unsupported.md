@@ -5,7 +5,7 @@ title: Skeena Voices
 
 Welcome to our new digital magazine, Commonplace, which promises to be as much an adventure in new digital landscapes as it is an exploration of real geographies and communities on the ground.
 
-We are very sorry but Commonplace cannot be viewed on your browser. We recommend installing the fast, free web browser Chrome <a href="https://www.google.com/intl/en/chrome/browser/">Chrome.</a>
+We are very sorry but Commonplace cannot be viewed on your browser. We recommend installing the fast, free web browser  <a href="https://www.google.com/intl/en/chrome/browser/">Chrome.</a>
 
 Our first issue focuses on the Skeena Basin in British Columbia—a vast, rugged, and still largely wild region of salmon rivers, ecological productivity and biological, cultural and linguistic diversity. But a series of recent developments have put the otherwise “remote” basin at the epicenter of global trends and convulsions; understanding the Skeena story is in many ways understanding our own story.
 
