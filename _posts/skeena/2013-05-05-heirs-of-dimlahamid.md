@@ -19,7 +19,7 @@ slideshow:
 - img: gary04.jpg
   caption: Development proposals across the Skeena have brought everyone into a conversation about the value of the land, including homesteaders like Ken Rabnett.
 - img: gary05.jpg
-  caption: The Great Bear Rainforest takes its name from the white grizzly or “spirit” bear, which the Tsimshian people said had the power to transform into a man.
+  caption: The Great Bear Rainforest takes its name from the Kermode or “spirit” bear, which the Tsimshian people said had the power to transform into a man.
 - img: gary07.jpg
   caption: Elder Helen Clifton married Gitga’at hereditary chief John Clifton in 1942 and moved to Hartley Bay where they raised six children, who gave them twenty grandchildren.
 - img: gary09.jpg
